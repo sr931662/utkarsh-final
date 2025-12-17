@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background: #f9f9f9;
+      }
+      .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      }
+      .employee-header {
+        display: flex;
+        align-items: center;
+      }
+      .employee-avatar {
+        width: 60px;
+        height: 60px;
+        background: #4285F4;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 20px;
+      }
+      canvas {
+        max-width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card employee-header">
+      <div class="employee-avatar">?</div>
+      <div class="employee-info">
+        <h1 style="margin: 0;">Name</h1>
+        <p style="margin: 0;">Email</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Employee Info</h3>
+      <p><strong>Phone:</strong> <span data-field="phone"></span></p>
+      <p><strong>DOB:</strong> <span data-field="dob"></span></p>
+      <p><strong>DOJ:</strong> <span data-field="doj"></span></p>
+      <p><strong>DOA:</strong> <span data-field="doa"></span></p>
+    </div>
+
+    <div class="card">
+      <h3>Performance</h3>
+      <p><strong>Rating:</strong> <span data-field="performance_rating"></span></p>
+      <p><strong>Projects Completed:</strong> <span data-field="projects_completed"></span></p>
+      <canvas id="performanceChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Attendance</h3>
+      <p><strong>Attendance:</strong> <span data-field="attendance"></span></p>
+      <canvas id="attendanceChart"></canvas>
+    </div>
+
+    <script>
+      google.script.run.withSuccessHandler(renderDashboard).getEmployeeData();
+
+      function renderDashboard(employee) {
+        if (employee.error) {
+          document.body.innerHTML = `<h2>${employee.error}</h2>`;
+          return;
+        }
+
+        document.querySelector('.employee-avatar').innerText = employee.initials;
+        document.querySelector('.employee-info h1').innerText = employee.name;
+        document.querySelector('.employee-info p').innerText = employee.email;
+
+        const fields = ['phone', 'dob', 'doj', 'doa', 'performance_rating', 'projects_completed', 'attendance'];
+        fields.forEach(f => {
+          const el = document.querySelector(`[data-field="${f}"]`);
+          if (el) el.innerText = employee[f] || 'N/A';
+        });
+
+        renderCharts(employee);
+      }
+
+      function renderCharts(employee) {
+        new Chart(document.getElementById('performanceChart'), {
+          type: 'bar',
+          data: {
+            labels: ['Your Rating'],
+            datasets: [{
+              data: [Number(employee.performance_rating)],
+              backgroundColor: '#4285F4',
+              borderRadius: 4
+            }]
+          },
+          options: {
+            scales: { y: { beginAtZero: true, max: 5 } },
+            plugins: { legend: { display: false } }
+          }
+        });
+
+        new Chart(document.getElementById('attendanceChart'), {
+          type: 'doughnut',
+          data: {
+            labels: ['Present', 'Absent'],
+            datasets: [{
+              data: [Number(employee.attendance), 100 - Number(employee.attendance)],
+              backgroundColor: ['#34A853', '#ccc']
+            }]
+          },
+          options: {
+            cutout: '70%',
+            plugins: { legend: { position: 'bottom' } }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

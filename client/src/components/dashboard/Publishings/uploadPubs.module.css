@@ -1,0 +1,495 @@
+/* Base Styles */
+.uploadContainer {
+  padding: 2rem;
+  margin: 0 auto;
+  width: auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.uploadGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 2rem;
+}
+
+/* Upload Section */
+.uploadSection {
+  border: 2px dashed #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.uploadSection.dragging {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.uploadIcon {
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.uploadBox h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+.urlInputBox {
+  margin-bottom: 1rem;
+}
+.uploadBox p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+.browseButton {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0.75rem 0;
+}
+
+.browseButton:hover {
+  background-color: #2563eb;
+}
+
+.fileInput {
+  display: none;
+}
+
+.supportedFormats {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.fileList {
+  margin-top: 1.5rem;
+}
+
+.fileList h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 0.75rem;
+}
+
+.fileList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.fileList li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.fileName {
+  flex: 1;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fileSize {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.removeButton:hover {
+  background-color: #fee2e2;
+}
+
+/* Metadata Section */
+.metadataSection {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.metadataSection h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.25rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: -webkit-fill-available;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.authorInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 0.75rem;
+  color: #94a3b8;
+}
+.inputAuto {
+  width: auto;
+}
+.authorInput input {
+  padding-left: 2.5rem !important;
+}
+/* Add these new styles */
+.urlInputContainer {
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.urlInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.urlInput {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.urlHelpText {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.authorAddButton,
+.authorRemoveButton {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.authorAddButton:hover {
+  color: #10b981;
+  background-color: #ecfdf5;
+}
+
+.authorRemoveButton:hover {
+  color: #ef4444;
+  background-color: #fee2e2;
+}
+
+.dateInput {
+  position: relative;
+}
+
+.dateInput input {
+  padding-left: 2.5rem !important;
+  width: auto;
+}
+
+/* Action Section */
+.actionSection {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.progressContainer {
+  margin-bottom: 1.5rem;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #10b981;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-size: 0.85rem;
+  color: #475569;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #10b981;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.uploadButton {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.uploadButton:hover {
+  background-color: #2563eb;
+}
+
+.uploadButton:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.resetButton {
+  background-color: white;
+  color: #64748b;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.resetButton:hover {
+  background-color: #f1f5f9;
+}
+
+/* Dark Mode Styles */
+.dark .uploadContainer {
+  background-color: #0f172a;
+}
+
+.dark .header h1 {
+  color: #f8fafc;
+}
+
+.dark .header p {
+  color: #94a3b8;
+}
+
+.dark .uploadSection {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.dark .uploadSection.dragging {
+  background-color: #1e3a8a;
+  border-color: #3b82f6;
+}
+
+.dark .uploadIcon {
+  color: #94a3b8;
+}
+
+.dark .uploadBox h3 {
+  color: #f8fafc;
+}
+
+.dark .uploadBox p {
+  color: #94a3b8;
+}
+
+.dark .fileList li {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.dark .fileSize {
+  color: #94a3b8;
+}
+
+.dark .metadataSection {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.dark .metadataSection h2 {
+  color: #f8fafc;
+}
+
+.dark .formGroup label {
+  color: #cbd5e1;
+}
+
+.dark .formGroup input,
+.dark .formGroup textarea,
+.dark .formGroup select {
+  background-color: #334155;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+.dark .inputIcon {
+  color: #94a3b8;
+}
+
+.dark .actionSection {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.dark .progressBar {
+  background-color: #334155;
+}
+
+.dark .progressText {
+  color: #cbd5e1;
+}
+
+.dark .resetButton {
+  background-color: #334155;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+.dark .resetButton:hover {
+  background-color: #475569;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .uploadGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .uploadContainer {
+    padding: 1.5rem;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+  }
+  
+  .uploadButton,
+  .resetButton {
+    width: 100%;
+  }
+}

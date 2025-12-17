@@ -1,0 +1,214 @@
+/* Base Styles */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  margin: -20px 0;
+  background-color: #f6f5f7;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Dark Theme */
+.loginContainer.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.loginContainer.dark .loginForm {
+  background-color: #1e293b;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.2);
+}
+
+.loginContainer.dark h1 {
+  color: #60a5fa;
+}
+
+.loginContainer.dark input {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+.loginContainer.dark .error {
+  color: #fca5a5;
+  background-color: #7f1d1d;
+}
+
+/* Form Styles */
+.loginForm {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.loginContainer h1 {
+  font-weight: bold;
+  margin: 0 0 1.5rem 0;
+  color: #3b82f6;
+}
+
+/* Input Styles */
+.loginContainer input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.loginContainer input:focus {
+  outline: 2px solid #3b82f6;
+}
+
+/* Button Styles */
+.loginContainer button {
+  border-radius: 20px;
+  border: 1px solid #3b82f6;
+  background-color: #3b82f6;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.loginContainer button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Error Styles */
+.error {
+  color: #ef4444;
+  background-color: #fee2e2;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .loginForm {
+    padding: 1.5rem 2rem;
+    max-width: 350px;
+  }
+}
+/* Login.module.css */
+.error {
+  color: #ff4d4f;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 77, 79, 0.1);
+  border-radius: 4px;
+}
+
+.success {
+  color: #52c41a;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(82, 196, 26, 0.1);
+  border-radius: 4px;
+}
+
+.forgotPasswordLink {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: #1890ff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.linkButton:hover {
+  text-decoration: underline;
+}
+
+.instructions {
+  color: #666;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cancelButton {
+  background: none;
+  border: 1px solid #d9d9d9;
+  color: #666;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cancelButton:hover {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+/* Dark mode styles */
+.dark .instructions {
+  color: #aaa;
+}
+
+.dark .cancelButton {
+  border-color: #444;
+  color: #ddd;
+}
+
+.dark .cancelButton:hover {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+@media (max-width: 480px) {
+  .loginContainer {
+    padding: 10px;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .loginForm {
+    padding: 1rem 1.5rem;
+    max-width: 300px;
+  }
+  
+  .loginContainer h1 {
+    font-size: 24px;
+  }
+  
+  .loginContainer button {
+    padding: 10px 35px;
+    font-size: 11px;
+  }
+  
+  .loginContainer input {
+    padding: 10px 12px;
+  }
+}

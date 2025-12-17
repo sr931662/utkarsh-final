@@ -1,0 +1,209 @@
+/* ResearchInterests.module.css */
+.section {
+  padding: 5rem 0;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+.riIcon {
+  font-size: 2rem;
+  color: cornflowerblue;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  perspective: 1000px;
+}
+
+.card {
+  background-color: var(--color-bg-card);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) translateZ(10px);
+}
+
+.iconContainer {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-icon-bg);
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  will-change: transform;
+}
+
+.iconContainer i {
+  color: var(--color-primary);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card:hover .iconContainer {
+  transform: scale(1.1);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+  color: var(--color-text);
+}
+
+.cardDescription {
+  color: var(--color-text-secondary);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+  position: relative;
+}
+
+.summary {
+  color: var(--color-text-secondary);
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.link i {
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .card {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* Decorative elements
+.section::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width: 200px;
+  height: 200px;
+  background-color: var(--color-decorative);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background-color: var(--color-decorative);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 1;
+  transition: background-color 0.3s ease;
+} */
+
+/* Dark mode specific hover states */
+:global(.dark) .card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+:global(.dark) .card:hover .cardTitle {
+  color: var(--color-primary);
+}

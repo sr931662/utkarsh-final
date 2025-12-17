@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.img1_back {
+    width: 30vw;
+    height: 60vh;
+    background-color: #415375;
+    border-radius: 500px;
+    margin-left: 10%;
+    margin-top: 5%;
+    z-index: 1;
+}
+.img1 {
+    width: 600px;
+    height: 600px;
+    margin-left: 13vw;
+    margin-top: 15vh;
+    top: 20px;
+    background: url(../../assets/Profile_pic.jpg);
+    background-size: cover;
+    border-radius: 5000px;
+    z-index: 40;
+    box-shadow: #415375 -20px 10px 30px 15px;
+}
+
+.basic_intro {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    margin-left: 8%;
+    margin-top: 15%;
+    position: absolute;
+    flex-direction: row;
+    font-size: 40px;
+    color: #415375;
+}
+
+.basic_name {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    margin-left: 8%;
+    margin-top: 18%;
+    position: absolute;
+    flex-direction: row;
+    font-size: 60px;
+    color: #415375;
+}
+
+.basic_prof {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    margin-left: 8%;
+    margin-top: 22%;
+    position: absolute;
+    flex-direction: row;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.basic_det {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    margin-left: 8%;
+    margin-top: 24.5%;
+    position: absolute;
+    flex-direction: row;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.download_cv {
+    display: flex;
+    position: absolute;
+    margin-left: 8%;
+    margin-top: 30%;
+    height: 5vh;
+    width: 10vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border: none;
+    background-color: #297BA5;
+    color: white;
+}
+.download_cv:hover {
+    background-color: black;
+    color: white;
+    animation-name: Transit-01;
+    animation-duration: 0.5s;
+}
+
+
+.card {
+    width: 100vw;
+    height: 30vh;
+    background-color: #f1f1f1;
+    position: absolute;
+    margin-top: 90vh;
+    margin-right: auto;
+    /* border-radius: 20px; */
+}
+
+.card p {
+    padding: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+@keyframes Transit-01 {
+    from {
+        background-color: #297BA5;
+        color: white;
+    }
+    to {
+        background-color: black;
+        color: white;
+    }
+}
+
+
+
+/* .card {
+    position: absolute;
+    background-color: #f1f1f1; /* Light grey background */
+    /* padding: 20px; */
+    /* border-radius: 15px; */
+    /* max-width: 700px; */
+    /* margin: auto; */
+    /* font-family: 'Arial', sans-serif; */
+    /* line-height: 1.6; */
+/* } */
+
+.card_content {
+    position: relative;
+    z-index: 1;
+}
+
+.circle {
+    position: absolute;
+    background-color: #62b7e0; /* Light blue color */
+    border-radius: 50%;
+    z-index: 0;
+}

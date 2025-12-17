@@ -1,0 +1,284 @@
+db.users.insertOne({
+  name: "Utkarsh Gupta",
+  email: "utkarsh860818@gmail.com",
+  password: "$2a$12$hxicow1T2kCOFkz/7VyBu.SU6I0OzeNYMENHnOmGIUxQNJxmbiIHm",  // bcrypt hash
+  role: "superadmin",
+  isApproved: true,
+  createdBy: null,
+  passwordResetToken: null,
+  passwordResetExpires: null,
+  passwordChangedAt: null,
+
+  professionalTitle: "Product Management Consultant",
+  profileImage: "",
+  gender: "male",
+  dateOfBirth: ISODate("1992-11-17T00:00:00Z"),
+  phoneNumber: "+1 (860) 818-6602",
+  alternateEmail: "utkarsh.gupta@uconn.edu",
+  socialMedia: {
+    twitter: "",
+    linkedin: "https://www.linkedin.com/in/utkarshgupta8/",
+    github: "",
+    researchGate: "",
+    googleScholar: "",
+    ORCID: "",
+  },
+
+  affiliation: {
+    institution: "",
+    department: "",
+    position: "",
+    faculty: "",
+    joiningDate: null,
+    officeLocation: "",
+    officeHours: ""
+  },
+
+  location: {
+    address: "",
+    city: "",
+    state: "",
+    country: "",
+    postalCode: "",
+    timeZone: ""
+  },
+
+  bio: "Utkarsh Gupta is a seasoned Data Science Consultant currently working with LatentView Analytics, a global analytics powerhouse. Based in San Francisco, he is presently engaged with YouTube, contributing to high-impact, data-driven solutions for one of the world’s leading tech giants.
+
+Prior to this, Utkarsh brought his analytical expertise to The Coca-Cola Company in Atlanta, where he was a key member of the global supply chain analytics team. He has also served as a Product Analytics Manager at Sureify, delivering insights to transform digital experiences for life insurance carriers.
+
+Utkarsh holds an MBA in Business Analytics from the UConn School of Business, Connecticut. His professional journey began at Mu Sigma, where he worked as a Decision Scientist, providing data science consulting to Fortune 100 clients. He also pursued entrepreneurial ventures in the Middle East, where he co-founded a technology startup focused on innovative analytics-driven solutions.
+
+With a unique blend of consulting, product, and entrepreneurial experience across the US, Middle East, and India, Utkarsh brings a global and versatile perspective to data-driven business strategy.",
+  education: [
+    {
+      degree: "MBA, Master of Business Administration",
+      field: "Business Analytics – STEM",
+      institution: "University of Connecticut (UConn School of Business)",
+      grade: "GPA - 3.9/4.0",
+      startdate: "August, 2019",
+      enddate: "May, 2021",
+      description: ""
+    },
+    {
+      degree: "Bachelor of Engineering",
+      field: "Electrical and Electronics Engineering",
+      institution: "Birla Institute of Technology, MESRA, India",
+      grade: "",
+      startdate: "July, 2011",
+      enddate: "April, 2015",
+      description: ""
+    }
+  ],
+  crashcourses: [
+    {
+      course: "Dashboard in Power BI",
+      field: "Data Visualization",
+      organization: "The Coca-Cola Company"
+    },
+    {
+      course: "Data Management - SQL",
+      field: "Database Management",
+      organization: "University of Connecticut"
+    },
+    {
+      course: "Data Science using Python",
+      field: "Data Science",
+      organization: "University of Connecticut"
+    },
+    {
+      course: "Financial Accounting and Reporting",
+      field: "Finance",
+      organization: "University of Connecticut"
+    },
+    {
+      course: "Financial Management",
+      field: "Finance",
+      organization: "University of Connecticut"
+    },
+    {
+      course: "Marketing Analytics",
+      field: "Marketing",
+      organization: "University of Connecticut"
+    },
+    {
+      course: "Predictive Modeling",
+      field: "Data Science",
+      organization: "University of Connecticut"
+    },
+    {
+      course: "Spreadsheet Modeling",
+      field: "Data Analysis",
+      organization: "University of Connecticut"
+    },
+    {
+      course: "Statistics for Business Analytics in R",
+      field: "Statistics",
+      organization: "University of Connecticut"
+    }
+  ],
+  "workExperience": [
+    {
+      "position": "Data Science Consultant",
+      "organization": "LatentView Analytics",
+      "startDate": ISODate("2022-01-01T00:00:00Z"),
+      "endDate": null,
+      "current": true,
+      "description": "Consulting for YouTube on advanced analytics and data science projects, delivering actionable insights to enhance platform performance and user engagement."
+    },
+    {
+      "position": "Supply Chain Analytics Consultant",
+      "organization": "The Coca-Cola Company",
+      "startDate": ISODate("2021-01-01T00:00:00Z"),
+      "endDate": ISODate("2021-12-31T00:00:00Z"),
+      "current": false,
+      "description": "Led global supply chain analytics initiatives, optimizing logistics and inventory strategies to improve operational efficiency."
+    },
+    {
+      "position": "Product Analytics Manager",
+      "organization": "Sureify",
+      "startDate": ISODate("2020-01-01T00:00:00Z"),
+      "endDate": ISODate("2020-12-31T00:00:00Z"),
+      "current": false,
+      "description": "Managed product analytics for digital solutions in the life insurance sector, driving data-informed decisions to enhance user experience and product offerings."
+    },
+    {
+      "position": "Founder & CEO",
+      "organization": "Tech Startup (Middle East)",
+      "startDate": ISODate("2017-01-01T00:00:00Z"),
+      "endDate": ISODate("2019-12-31T00:00:00Z"),
+      "current": false,
+      "description": "Founded and led a technology startup focused on delivering innovative solutions, overseeing product development, business strategy, and market expansion."
+    },
+    {
+      "position": "Decision Scientist",
+      "organization": "Mu Sigma",
+      "startDate": ISODate("2014-01-01T00:00:00Z"),
+      "endDate": ISODate("2016-12-31T00:00:00Z"),
+      "current": false,
+      "description": "Provided data science consulting to Fortune 100 companies, developing analytical models and strategies to solve complex business problems."
+    }
+  ],
+  awards: [
+    {
+      title: "B-Plan Competition",
+      year: 2014,
+      description: "Third Place and cash prize of INR 5000 in competition issued by Department of Science and Technology and BT. Associated with Birla Institute of Technology, Mesra."
+    },
+    {
+      title: "Humorous Speech Contest",
+      year: 2013,
+      description: "First Place in Toastmaster International's Humorous Speech Contest for speech titled 'Once upon a time in Delhi Metro'."
+    }
+  ],
+
+  researchInterests: ["AI in Education", "Cybersecurity", "Data Governance"],
+  teachingInterests: ["Systems Design", "Secure Programming"],
+  skills: ["Product Analytics",
+  "A/B Testing",
+  "Cross-functional Team Leadership",
+  "Data Science",
+  "Data Analysis",
+  "Machine Learning",
+  "Business Analytics",
+  "Data Visualization",
+  "Data Ingestion",
+  "Data Management",
+  "Analytical Skills",
+  "Statistical Modeling",
+  "Consulting",
+  "Artificial Intelligence (AI)",
+  "Statistics",
+  "Python (Programming Language)",
+  "Tableau",
+  "SQL",
+  "R",
+  "Microsoft Power BI",
+  "Microsoft Word",
+  "Microsoft PowerPoint",
+  "Predictive Modeling",
+  "Performance Dashboards",
+  "Data Cleaning",
+  "Data Analytics",
+  "Predictive Analytics",
+  "Microsoft Excel",
+  "Microsoft Office",
+  "Business Intelligence (BI)",
+  "Databases",
+  "Business Analysis",
+  "Management",
+  "Leadership",
+  "Big Data",
+  "Big Data Analytics",
+  "Project Management",
+  "Jira",
+  "Product Management",
+  "Product Requirements"
+  ],
+
+  technicalSkills: [
+  ],
+
+  certificates: [
+    {
+      title: "Advanced R Programming for Data Analytics in Business",
+      organization: "NPTEL",
+      issueDate: "Nov 2024",
+      certID: "NPTEL24MG1135734002348",
+      credentialslink: "Advanced R Programming for Data Analytics in Business.pdf"
+    },
+    {
+      title: "Introduction to Machine Learning",
+      organization: "NPTEL",
+      issueDate: "Nov 2024",
+      certID: "NPTEL24C51015534002116",
+      credentialslink: "Introduction to Machine Learning.pdf"
+    },
+    {
+      title: "Practical Time Series Analysis",
+      organization: "The State University of New York",
+      issueDate: "Nov 2024",
+      certID: "XTOXV59UOR9",
+      credentialslink: "Coursea XTOXV59UOR9.pdf"
+    },
+    {
+      title: "The Product Management for AI & Data Science Course",
+      organization: "Udenry",
+      issueDate: "Apr 2024",
+      certID: "UC-c429b919-bdca-4e5b-9e83-fea32056164a",
+      credentialslink: null // No direct PDF link provided, only "Show credential" button
+    },
+    {
+      title: "Learn Python 3 Course",
+      organization: "Codesademy",
+      issueDate: "Jan 2021",
+      certID: null, // No credential ID provided
+      credentialslink: null // Only "Show credential" button
+    },
+    {
+      title: "Python for Data Science Essential Training Part 1",
+      organization: "LinkedIn",
+      issueDate: "Sep 2020",
+      certID: null, // No credential ID provided
+      credentialslink: null // Only "Show credential" button
+    }
+  ],
+
+  languages: [
+    {
+      name: "English",
+      proficiency: "native"
+    }
+  ],
+  hobbies: ["Reading", "Chess", "Hiking"],
+
+  notificationPreferences: {
+    emailNotifications: true,
+    pushNotifications: true
+  },
+  lastActive: ISODate(),
+  profileCompletion: 100,
+
+  createdAt: ISODate(),
+  updatedAt: ISODate()
+});

@@ -1,0 +1,89 @@
+.otpContainer {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.otpContainer h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.otpContainer p {
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.otpInput {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.error {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.success {
+  color: #2ecc71;
+  margin-bottom: 1rem;
+}
+
+.verifyButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.verifyButton:hover {
+  background-color: #2980b9;
+}
+
+.verifyButton:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.backButton, .resendButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.backButton {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.resendButton {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.resendButton:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}

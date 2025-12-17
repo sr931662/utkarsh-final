@@ -1,0 +1,794 @@
+/* Navbar.module.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dark .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(72, 72, 72, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logoText {
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  transition: transform 0.3s ease;
+}
+
+.logoDot {
+  font-size: 1.8rem;
+  color: #3b82f6;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logoText {
+  transform: translateX(-2px);
+}
+
+.logo:hover .logoDot {
+  transform: translateX(2px);
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.navLink {
+  position: relative;
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+.linkText {
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.linkHover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3b82f6;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.navLink:hover .linkText {
+  color: #3b82f6;
+}
+
+.navLink:hover .linkHover {
+  transform: translateX(0);
+}
+
+.mobileMenuButton {
+  width: 2rem;
+  height: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 60;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #1a1a1a;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.mobileMenuButton.open .hamburgerLine:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobileMenuButton.open .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuButton.open .hamburgerLine:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobileMenu {
+  display: none;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileMenuOpen {
+  display: block;
+  transform: translateY(0);
+}
+
+.mobileMenuContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobileNavLink {
+  display: block;
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.75rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobileLinkText {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.mobileNavLink:hover .mobileLinkText {
+  transform: translateX(10px);
+  color: #3b82f6;
+}
+
+.mobileNavLink::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e5e7eb;
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+  }
+  .mobileMenuButton {
+    display: none;
+  }
+  
+  .container {
+    padding: 1.2rem 2.5rem;
+  }
+}
+/* Add these to your existing Navbar.module.css */
+
+/* Theme Toggle Styles */
+.themeToggleContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.themeToggle {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  border-radius: 14px;
+  background-color: #e2e8f0;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.4s ease;
+  overflow: hidden;
+}
+
+.toggleCircle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggleIcon {
+  font-size: 14px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Dark mode specific styles */
+.dark .header {
+  background-color: rgba(15, 23, 42, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark .logoText {
+  color: #f8fafc;
+}
+
+.dark .navLink {
+  color: #94a3b8;
+}
+
+.dark .navLink:hover .linkText {
+  color: #60a5fa;
+}
+
+.dark .linkHover {
+  background-color: #60a5fa;
+}
+
+.dark .hamburgerLine {
+  background-color: #f8fafc;
+}
+
+.dark .mobileMenu {
+  background-color: #0f172a;
+}
+
+.dark .mobileNavLink {
+  color: #94a3b8;
+}
+
+.dark .mobileNavLink:hover .mobileLinkText {
+  color: #60a5fa;
+}
+
+.dark .mobileNavLink::before {
+  background-color: #1e293b;
+}
+
+/* Mobile theme toggle */
+.mobileThemeToggle {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  text-align: left;
+  cursor: pointer;
+  color: #3b82f6;
+}
+
+.dark .mobileThemeToggle {
+  color: #60a5fa;
+}
+
+@media (min-width: 768px) {
+  .themeToggleContainer {
+    margin-left: 2.5rem;
+  }
+}/* Add these to your existing Navbar.module.css */
+@media (max-width: 768px) {
+  .themeToggleContainer {
+    display: none;
+  }
+}/* Add these to your existing Navbar.module.css */
+
+/* Dark mode specific styles */
+:global(.dark) .header {
+  background-color: rgba(15, 23, 42, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+:global(.dark) .logoText {
+  color: #f8fafc;
+}
+
+:global(.dark) .navLink {
+  color: #94a3b8;
+}
+
+:global(.dark) .navLink:hover .linkText {
+  color: #60a5fa;
+}
+
+:global(.dark) .linkHover {
+  background-color: #60a5fa;
+}
+
+:global(.dark) .hamburgerLine {
+  background-color: #f8fafc;
+}
+
+:global(.dark) .mobileMenu {
+  background-color: #0f172a;
+}
+
+:global(.dark) .mobileNavLink {
+  color: #94a3b8;
+}
+
+:global(.dark) .mobileNavLink:hover .mobileLinkText {
+  color: #60a5fa;
+}
+
+:global(.dark) .mobileNavLink::before {
+  background-color: #1e293b;
+}
+
+:global(.dark) .mobileThemeToggle {
+  color: #60a5fa;
+}
+/* Add these to your existing Navbar.module.css */
+
+/* Admin-specific styles */
+.header .adminHeader {
+  background-color: rgba(15, 23, 42, 0.98) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+.header .adminHeader .dark {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.viewPublicSite, .adminLogin {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #3b82f6;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.dark .viewPublicSite, .dark .adminLogin {
+  color: #60a5fa;
+}
+
+.viewPublicSite:hover, .adminLogin:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.mobileViewPublic, .mobileAdminLogin {
+  display: block;
+  font-size: 1rem;
+  color: #3b82f6;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  margin-top: 1rem;
+}
+
+.dark .mobileViewPublic, .dark .mobileAdminLogin {
+  color: #60a5fa;
+}
+
+/* Research scholar specific nav items */
+.navLink {
+  position: relative;
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Mobile menu adjustments */
+.mobileMenuContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileNavLink {
+  display: block;
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.75rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .mobileNavLink {
+  color: #94a3b8;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+  }
+  
+  .mobileMenuButton {
+    display: none;
+  }
+  
+  .container {
+    padding: 1.2rem 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .controls {
+    gap: 1rem;
+  }
+  
+  .viewPublicSite, .adminLogin {
+    display: none;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .adminLogin {
+    display: none;
+  }
+  
+  .themeToggleContainer {
+    margin-left: 0;
+  }
+}
+
+/* User Dropdown Styles */
+.userDropdown {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.userButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.userButton:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.dark .userButton:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+}
+
+.userButtonClasses {
+  border-color: white;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  color: #60a5fa;
+  background-color: transparent;
+}
+
+.userGreeting {
+  white-space: nowrap;
+}
+
+.dropdownIcon {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdownMenu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  overflow: hidden;
+  z-index: 100;
+  margin-top: 0.5rem;
+}
+
+.dark .dropdownMenu {
+  background-color: #1e293b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dark .dropdownItem {
+  color: #94a3b8;
+}
+
+.dropdownItem:hover {
+  background-color: #f3f4f6;
+  color: #3b82f6;
+}
+
+.dark .dropdownItem:hover {
+  background-color: #1e293b;
+  color: #60a5fa;
+}
+
+/* Mobile user dropdown styles */
+.mobileUserInfo {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.dark .mobileUserInfo {
+  border-bottom-color: #1e293b;
+}
+
+.mobileUserName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.mobileUserEmail {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.dark .mobileUserEmail {
+  color: #64748b;
+}
+/* Dark Theme Styles for User Dropdown */
+.dark .userButton {
+  color: #e2e8f0;
+}
+
+.dark .userButton:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+}
+
+.dark .dropdownMenu {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark .dropdownItem {
+  color: #94a3b8;
+}
+
+.dark .dropdownItem:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+}
+
+/* Dark theme for mobile menu user section */
+.dark .mobileUserInfo {
+  border-bottom-color: #1e293b;
+}
+
+.dark .mobileUserName {
+  color: #f8fafc;
+}
+
+.dark .mobileUserEmail {
+  color: #94a3b8;
+}
+
+/* Dark theme for mobile menu items */
+.dark .mobileNavLink {
+  color: #94a3b8;
+}
+/* User Info Styles */
+.userInfo {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .userInfo {
+  border-bottom-color: #334155;
+}
+
+.userName {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.userEmail {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.dark .userEmail {
+  color: #94a3b8;
+}
+
+.userGreeting {
+  white-space: nowrap;
+  margin-right: 0.5rem;
+}
+.dark .mobileNavLink:hover .mobileLinkText {
+  color: #60a5fa;
+}
+
+.dark .mobileNavLink::before {
+  background-color: #1e293b;
+}
+
+/* Dark theme for admin buttons */
+.dark .adminButton,
+.dark .viewPublicSite,
+.dark .adminLogin {
+  color: #60a5fa;
+}
+
+.dark .adminButton:hover,
+.dark .viewPublicSite:hover,
+.dark .adminLogin:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+}
+
+/* Dark theme for mobile buttons */
+.dark .mobileAdminButton,
+.dark .mobileViewPublic,
+.dark .mobileAdminLogin {
+  color: #60a5fa;
+}
+/* Add to Navbar.module.css */
+
+/* User Info Styles */
+.userInfo {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.userName {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1f2937;
+}
+
+.userEmail {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.userMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.userRole {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.userLastLogin {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.userRoleBadge {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile User Info */
+.mobileUserInfo {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.mobileUserName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.mobileUserEmail {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.mobileUserMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Dark mode styles */
+.dark .userInfo {
+  border-bottom-color: #334155;
+}
+
+.dark .userName {
+  color: #f8fafc;
+}
+
+.dark .userEmail,
+.dark .userLastLogin,
+.dark .mobileUserEmail,
+.dark .mobileUserMeta {
+  color: #94a3b8;
+}
+
+.dark .userRole {
+  color: #60a5fa;
+  background-color: rgba(96, 165, 250, 0.1);
+}
+
+.dark .mobileUserInfo {
+  border-bottom-color: #334155;
+}
+
+.dark .mobileUserName {
+  color: #f8fafc;
+}

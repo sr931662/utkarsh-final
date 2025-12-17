@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Emily Richardson | Research Scholar</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#2FDCE8',secondary:'#4A5568'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1F2937;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: -1;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 6px;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #2FDCE8;
+            border: 4px solid white;
+            z-index: 1;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 2px solid #D1D5DB;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .custom-checkbox.checked {
+            background-color: #2FDCE8;
+            border-color: #2FDCE8;
+        }
+        .custom-checkbox.checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-radio {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 2px solid #D1D5DB;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .custom-radio.checked {
+            border-color: #2FDCE8;
+        }
+        .custom-radio.checked::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            background-color: #2FDCE8;
+            border-radius: 50%;
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+            background-color: #E5E7EB;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .custom-switch.checked {
+            background-color: #2FDCE8;
+        }
+        .custom-switch::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            background-color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .custom-switch.checked::after {
+            left: 28px;
+        }
+        .tab-button {
+            position: relative;
+            z-index: 1;
+        }
+        .tab-button.active {
+            color: #2FDCE8;
+            font-weight: 500;
+        }
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #2FDCE8;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-white bg-opacity-95 shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-['Pacifico'] text-gray-800">logo</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#research" class="text-gray-700 hover:text-primary transition-colors duration-300">Research Interests</a>
+                <a href="#publications" class="text-gray-700 hover:text-primary transition-colors duration-300">Publications</a>
+                <a href="#cv" class="text-gray-700 hover:text-primary transition-colors duration-300">CV</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+            </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <div class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer" id="mobile-menu-button">
+                <i class="ri-menu-line ri-2x"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#research" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Research Interests</a>
+                <a href="#publications" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Publications</a>
+                <a href="#cv" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">CV</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="w-full pt-32 pb-20 bg-gradient-to-r from-white to-primary/5 relative overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 mb-10 md:mb-0">
+                <h1 class="playfair text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">Dr. Emily Richardson</h1>
+                <p class="text-xl text-gray-600 mb-6">Research Scholar in Computational Neuroscience</p>
+                <p class="text-gray-600 mb-8 max-w-lg">Stanford University, Department of Neuroscience</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-primary text-white px-6 py-3 !rounded-button shadow-md hover:shadow-lg transition-all duration-300 whitespace-nowrap">Get in Touch</a>
+                    <a href="#cv" class="bg-white text-gray-800 border border-gray-300 px-6 py-3 !rounded-button shadow-sm hover:shadow-md transition-all duration-300 whitespace-nowrap">View CV</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-xl overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20female%20academic%20researcher%20with%20glasses%2C%20mid-30s%2C%20with%20short%20dark%20hair%2C%20neutral%20professional%20attire%2C%20plain%20light%20background%2C%20looking%20confident%20and%20approachable%2C%20high%20quality%20professional%20portrait&width=800&height=800&seq=1&orientation=squarish" alt="Dr. Emily Richardson" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
+        <div class="absolute top-20 right-20 w-32 h-32 rounded-full bg-primary/10 blur-xl"></div>
+        <div class="absolute bottom-20 left-20 w-24 h-24 rounded-full bg-primary/10 blur-xl"></div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="research" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center mb-16">Research Interests</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Research Area 1 -->
+                <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto">
+                        <i class="ri-brain-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Computational Neuroscience</h3>
+                    <p class="text-gray-600 text-center">Developing mathematical models to understand neural circuits and brain function. Focus on predictive coding and Bayesian inference in sensory processing.</p>
+                </div>
+                
+                <!-- Research Area 2 -->
+                <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto">
+                        <i class="ri-ai-generate-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Machine Learning in Neuroscience</h3>
+                    <p class="text-gray-600 text-center">Applying deep learning techniques to analyze neural data and develop brain-inspired algorithms for artificial intelligence systems.</p>
+                </div>
+                
+                <!-- Research Area 3 -->
+                <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto">
+                        <i class="ri-mental-health-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Cognitive Neuroscience</h3>
+                    <p class="text-gray-600 text-center">Investigating the neural basis of decision-making, attention, and memory through computational modeling and experimental approaches.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8">My research bridges computational modeling with experimental neuroscience to advance our understanding of brain function and develop novel therapeutic approaches for neurological disorders.</p>
+                <a href="#publications" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300">
+                    <span>View related publications</span>
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center mb-8">Publications</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Selected peer-reviewed articles, conference papers, and book chapters from my research career.</p>
+            
+            <!-- Publication Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="tab-button active px-4 py-2 !rounded-button bg-white shadow-sm hover:shadow transition-all duration-300 whitespace-nowrap" data-tab="all">All Publications</button>
+                <button class="tab-button px-4 py-2 !rounded-button bg-white shadow-sm hover:shadow transition-all duration-300 whitespace-nowrap" data-tab="journal">Journal Articles</button>
+                <button class="tab-button px-4 py-2 !rounded-button bg-white shadow-sm hover:shadow transition-all duration-300 whitespace-nowrap" data-tab="conference">Conference Papers</button>
+                <button class="tab-button px-4 py-2 !rounded-button bg-white shadow-sm hover:shadow transition-all duration-300 whitespace-nowrap" data-tab="book">Book Chapters</button>
+            </div>
+            
+            <!-- Publications List -->
+            <div class="tab-content active" id="all-content">
+                <div class="space-y-8">
+                    <!-- Publication 1 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-primary font-medium mb-2">Journal Article • 2024</p>
+                                <h3 class="text-xl font-semibold mb-2">Neural Mechanisms of Predictive Coding in Visual Cortex</h3>
+                                <p class="text-gray-600 mb-4">Richardson, E., Johnson, K., & Martinez, A.</p>
+                                <p class="text-gray-700 mb-4">Nature Neuroscience, 27(4), 512-526</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Predictive Coding</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Visual Cortex</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Neural Computation</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-file-pdf-line mr-1"></i>
+                                        <span>PDF</span>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-links-line mr-1"></i>
+                                        <span>DOI</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-100 rounded-md px-4 py-3 text-center">
+                                    <p class="text-sm text-gray-500 mb-1">Citations</p>
+                                    <p class="text-2xl font-bold text-gray-800">87</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 2 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-primary font-medium mb-2">Conference Paper • 2023</p>
+                                <h3 class="text-xl font-semibold mb-2">Deep Learning Approaches for Decoding Neural Activity in Decision-Making Tasks</h3>
+                                <p class="text-gray-600 mb-4">Richardson, E., Zhang, W., & Patel, S.</p>
+                                <p class="text-gray-700 mb-4">Proceedings of the Neural Information Processing Systems (NeurIPS 2023), 3245-3257</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Deep Learning</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Neural Decoding</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Decision-Making</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-file-pdf-line mr-1"></i>
+                                        <span>PDF</span>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-links-line mr-1"></i>
+                                        <span>DOI</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-100 rounded-md px-4 py-3 text-center">
+                                    <p class="text-sm text-gray-500 mb-1">Citations</p>
+                                    <p class="text-2xl font-bold text-gray-800">42</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 3 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-primary font-medium mb-2">Journal Article • 2023</p>
+                                <h3 class="text-xl font-semibold mb-2">Bayesian Models of Perception and Learning in the Human Brain</h3>
+                                <p class="text-gray-600 mb-4">Richardson, E., & Thompson, R.</p>
+                                <p class="text-gray-700 mb-4">Trends in Cognitive Sciences, 27(2), 145-159</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Bayesian Inference</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Perception</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Learning</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-file-pdf-line mr-1"></i>
+                                        <span>PDF</span>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-links-line mr-1"></i>
+                                        <span>DOI</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-100 rounded-md px-4 py-3 text-center">
+                                    <p class="text-sm text-gray-500 mb-1">Citations</p>
+                                    <p class="text-2xl font-bold text-gray-800">56</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 4 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-primary font-medium mb-2">Book Chapter • 2022</p>
+                                <h3 class="text-xl font-semibold mb-2">Computational Models of Attention in Health and Disease</h3>
+                                <p class="text-gray-600 mb-4">Richardson, E., Miller, J., & Chen, L.</p>
+                                <p class="text-gray-700 mb-4">In: Handbook of Computational Neuroscience (eds. Williams, D. & Garcia, M.), Oxford University Press, pp. 218-243</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Attention</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Computational Models</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Neuropsychiatry</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-file-pdf-line mr-1"></i>
+                                        <span>PDF</span>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-links-line mr-1"></i>
+                                        <span>DOI</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-100 rounded-md px-4 py-3 text-center">
+                                    <p class="text-sm text-gray-500 mb-1">Citations</p>
+                                    <p class="text-2xl font-bold text-gray-800">29</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="journal-content">
+                <div class="space-y-8">
+                    <!-- Journal Publication 1 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-primary font-medium mb-2">Journal Article • 2024</p>
+                                <h3 class="text-xl font-semibold mb-2">Neural Mechanisms of Predictive Coding in Visual Cortex</h3>
+                                <p class="text-gray-600 mb-4">Richardson, E., Johnson, K., & Martinez, A.</p>
+                                <p class="text-gray-700 mb-4">Nature Neuroscience, 27(4), 512-526</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Predictive Coding</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Visual Cortex</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Neural Computation</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-file-pdf-line mr-1"></i>
+                                        <span>PDF</span>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-links-line mr-1"></i>
+                                        <span>DOI</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-100 rounded-md px-4 py-3 text-center">
+                                    <p class="text-sm text-gray-500 mb-1">Citations</p>
+                                    <p class="text-2xl font-bold text-gray-800">87</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Journal Publication 2 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-primary font-medium mb-2">Journal Article • 2023</p>
+                                <h3 class="text-xl font-semibold mb-2">Bayesian Models of Perception and Learning in the Human Brain</h3>
+                                <p class="text-gray-600 mb-4">Richardson, E., & Thompson, R.</p>
+                                <p class="text-gray-700 mb-4">Trends in Cognitive Sciences, 27(2), 145-159</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Bayesian Inference</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Perception</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Learning</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-file-pdf-line mr-1"></i>
+                                        <span>PDF</span>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-links-line mr-1"></i>
+                                        <span>DOI</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-100 rounded-md px-4 py-3 text-center">
+                                    <p class="text-sm text-gray-500 mb-1">Citations</p>
+                                    <p class="text-2xl font-bold text-gray-800">56</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="conference-content">
+                <div class="space-y-8">
+                    <!-- Conference Publication -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-primary font-medium mb-2">Conference Paper • 2023</p>
+                                <h3 class="text-xl font-semibold mb-2">Deep Learning Approaches for Decoding Neural Activity in Decision-Making Tasks</h3>
+                                <p class="text-gray-600 mb-4">Richardson, E., Zhang, W., & Patel, S.</p>
+                                <p class="text-gray-700 mb-4">Proceedings of the Neural Information Processing Systems (NeurIPS 2023), 3245-3257</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Deep Learning</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Neural Decoding</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Decision-Making</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-file-pdf-line mr-1"></i>
+                                        <span>PDF</span>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-links-line mr-1"></i>
+                                        <span>DOI</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-100 rounded-md px-4 py-3 text-center">
+                                    <p class="text-sm text-gray-500 mb-1">Citations</p>
+                                    <p class="text-2xl font-bold text-gray-800">42</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="book-content">
+                <div class="space-y-8">
+                    <!-- Book Chapter -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-primary font-medium mb-2">Book Chapter • 2022</p>
+                                <h3 class="text-xl font-semibold mb-2">Computational Models of Attention in Health and Disease</h3>
+                                <p class="text-gray-600 mb-4">Richardson, E., Miller, J., & Chen, L.</p>
+                                <p class="text-gray-700 mb-4">In: Handbook of Computational Neuroscience (eds. Williams, D. & Garcia, M.), Oxford University Press, pp. 218-243</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Attention</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Computational Models</span>
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Neuropsychiatry</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-file-pdf-line mr-1"></i>
+                                        <span>PDF</span>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-primary/80 flex items-center">
+                                        <i class="ri-links-line mr-1"></i>
+                                        <span>DOI</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-100 rounded-md px-4 py-3 text-center">
+                                    <p class="text-sm text-gray-500 mb-1">Citations</p>
+                                    <p class="text-2xl font-bold text-gray-800">29</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center bg-white text-gray-800 border border-gray-300 px-6 py-3 !rounded-button shadow-sm hover:shadow-md transition-all duration-300 whitespace-nowrap">
+                    <span>View All Publications</span>
+                    <i class="ri-external-link-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center mb-8">Curriculum Vitae</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">A summary of my academic background, research experience, and professional achievements.</p>
+            
+            <div class="flex justify-center mb-12">
+                <a href="#" class="bg-primary text-white px-6 py-3 !rounded-button shadow-md hover:shadow-lg transition-all duration-300 flex items-center whitespace-nowrap">
+                    <i class="ri-download-line mr-2"></i>
+                    <span>Download Full CV (PDF)</span>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Education Timeline -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8">Education</h3>
+                    
+                    <div class="relative pl-8 space-y-8 timeline-item">
+                        <!-- Timeline Item 1 -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                                <p class="text-sm text-primary font-medium mb-2">2014 - 2018</p>
+                                <h4 class="text-xl font-semibold mb-2">Ph.D. in Neuroscience</h4>
+                                <p class="text-gray-700 mb-2">Massachusetts Institute of Technology</p>
+                                <p class="text-gray-600">Dissertation: "Computational Models of Predictive Processing in the Visual System"</p>
+                                <p class="text-gray-600 mt-2">Advisor: Prof. Michael Thompson</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 2 -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                                <p class="text-sm text-primary font-medium mb-2">2012 - 2014</p>
+                                <h4 class="text-xl font-semibold mb-2">M.S. in Computer Science</h4>
+                                <p class="text-gray-700 mb-2">University of California, Berkeley</p>
+                                <p class="text-gray-600">Focus: Machine Learning and Artificial Intelligence</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 3 -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                                <p class="text-sm text-primary font-medium mb-2">2008 - 2012</p>
+                                <h4 class="text-xl font-semibold mb-2">B.S. in Cognitive Science</h4>
+                                <p class="text-gray-700 mb-2">University of Michigan</p>
+                                <p class="text-gray-600">Minor: Mathematics</p>
+                                <p class="text-gray-600 mt-2">Graduated Summa Cum Laude</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Experience -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8">Professional Experience</h3>
+                    
+                    <div class="relative pl-8 space-y-8 timeline-item">
+                        <!-- Experience Item 1 -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                                <p class="text-sm text-primary font-medium mb-2">2022 - Present</p>
+                                <h4 class="text-xl font-semibold mb-2">Assistant Professor</h4>
+                                <p class="text-gray-700 mb-2">Stanford University, Department of Neuroscience</p>
+                                <ul class="text-gray-600 list-disc list-inside space-y-1 mt-2">
+                                    <li>Lead the Computational Cognitive Neuroscience Lab</li>
+                                    <li>Teach graduate courses in computational neuroscience</li>
+                                    <li>Supervise 5 PhD students and 2 postdoctoral researchers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience Item 2 -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                                <p class="text-sm text-primary font-medium mb-2">2019 - 2022</p>
+                                <h4 class="text-xl font-semibold mb-2">Postdoctoral Fellow</h4>
+                                <p class="text-gray-700 mb-2">Harvard University, Center for Brain Science</p>
+                                <ul class="text-gray-600 list-disc list-inside space-y-1 mt-2">
+                                    <li>Developed computational models of decision-making</li>
+                                    <li>Collaborated on multi-site neuroimaging studies</li>
+                                    <li>Mentored undergraduate and graduate students</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience Item 3 -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                                <p class="text-sm text-primary font-medium mb-2">2018 - 2019</p>
+                                <h4 class="text-xl font-semibold mb-2">Research Scientist</h4>
+                                <p class="text-gray-700 mb-2">Google Brain</p>
+                                <ul class="text-gray-600 list-disc list-inside space-y-1 mt-2">
+                                    <li>Worked on brain-inspired AI algorithms</li>
+                                    <li>Developed neural network models for sensory processing</li>
+                                    <li>Published research on predictive coding in deep learning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills & Expertise -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-center mb-8">Skills & Expertise</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Technical Skills -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4 mx-auto">
+                            <i class="ri-code-s-slash-line ri-xl text-primary"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-center mb-4">Technical Skills</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Python (PyTorch, TensorFlow, NumPy, SciPy)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>MATLAB</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>R (Statistical Analysis)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Neural Data Analysis</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Machine Learning & Deep Learning</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Computational Modeling</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Research Methods -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4 mx-auto">
+                            <i class="ri-microscope-line ri-xl text-primary"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-center mb-4">Research Methods</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>fMRI Data Analysis</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>EEG/MEG Analysis</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Single-Unit Recording</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Psychophysics</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Bayesian Statistical Methods</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Experimental Design</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Professional Skills -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4 mx-auto">
+                            <i class="ri-team-line ri-xl text-primary"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-center mb-4">Professional Skills</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Scientific Writing & Publication</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Grant Writing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Teaching & Mentoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Project Management</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Interdisciplinary Collaboration</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-primary rounded-full mr-2"></span>
+                                <span>Science Communication</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center mb-8">Get in Touch</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Feel free to reach out for research collaborations, speaking engagements, or academic inquiries.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
+                    
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Your name">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Your email address">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Message subject">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Your message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button shadow-md hover:shadow-lg transition-all duration-300 whitespace-nowrap">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div>
+                    <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+                                    <i class="ri-map-pin-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Office Address</h4>
+                                    <p class="text-gray-600">Department of Neuroscience<br>Stanford University<br>290 Jane Stanford Way<br>Stanford, CA 94305</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Email</h4>
+                                    <p class="text-gray-600">emily.richardson@stanford.edu</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Phone</h4>
+                                    <p class="text-gray-600">+1 (650) 723-4000</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+                                    <i class="ri-time-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Office Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9:00 AM - 5:00 PM<br>By appointment only</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Academic Profiles -->
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h3 class="text-xl font-semibold mb-6">Academic Profiles</h3>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="flex items-center bg-gray-100 hover:bg-gray-200 transition-colors duration-300 px-4 py-2 rounded-full">
+                                <i class="ri-google-fill mr-2 text-[#4285F4]"></i>
+                                <span>Google Scholar</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center bg-gray-100 hover:bg-gray-200 transition-colors duration-300 px-4 py-2 rounded-full">
+                                <i class="ri-linkedin-fill mr-2 text-[#0077B5]"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center bg-gray-100 hover:bg-gray-200 transition-colors duration-300 px-4 py-2 rounded-full">
+                                <i class="ri-github-fill mr-2"></i>
+                                <span>GitHub</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center bg-gray-100 hover:bg-gray-200 transition-colors duration-300 px-4 py-2 rounded-full">
+                                <i class="ri-twitter-x-fill mr-2 text-[#1DA1F2]"></i>
+                                <span>Twitter</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center bg-gray-100 hover:bg-gray-200 transition-colors duration-300 px-4 py-2 rounded-full">
+                                <i class="ri-research-line mr-2 text-[#40BA9B]"></i>
+                                <span>ResearchGate</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center bg-gray-100 hover:bg-gray-200 transition-colors duration-300 px-4 py-2 rounded-full">
+                                <i class="ri-open-source-fill mr-2 text-[#F5A623]"></i>
+                                <span>ORCID</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div class="mt-12 rounded-lg overflow-hidden shadow-md h-80 bg-white">
+                <div class="w-full h-full" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-semibold mb-4">Dr. Emily Richardson</h3>
+                    <p class="text-gray-300 mb-4">Research Scholar in Computational Neuroscience at Stanford University, focusing on neural mechanisms of perception, learning, and decision-making.</p>
+                    <p class="text-gray-300">© 2025 Dr. Emily Richardson. All rights reserved.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#research" class="text-gray-300 hover:text-primary transition-colors duration-300">Research Interests</a></li>
+                        <li><a href="#publications" class="text-gray-300 hover:text-primary transition-colors duration-300">Publications</a></li>
+                        <li><a href="#cv" class="text-gray-300 hover:text-primary transition-colors duration-300">CV</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-primary transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Stay Updated</h3>
+                    <p class="text-gray-300 mb-4">Subscribe to receive updates on new publications and research.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 rounded-l border-none focus:outline-none text-gray-800 w-full">
+                        <button class="bg-primary text-white px-4 py-2 !rounded-r-button whitespace-nowrap">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-2x"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Publication tabs
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tab = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to current button and content
+                    this.classList.add('active');
+                    document.getElementById(`${tab}-content`).classList.add('active');
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Custom form elements
+            const customCheckboxes = document.querySelectorAll('.custom-checkbox');
+            customCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                    const input = this.previousElementSibling;
+                    if (input && input.type === 'checkbox') {
+                        input.checked = !input.checked;
+                    }
+                });
+            });
+            
+            const customRadios = document.querySelectorAll('.custom-radio');
+            customRadios.forEach(radio => {
+                radio.addEventListener('click', function() {
+                    const name = this.getAttribute('data-name');
+                    if (name) {
+                        document.querySelectorAll(`.custom-radio[data-name="${name}"]`).forEach(r => {
+                            r.classList.remove('checked');
+                        });
+                        this.classList.add('checked');
+                        
+                        const input = this.previousElementSibling;
+                        if (input && input.type === 'radio') {
+                            input.checked = true;
+                        }
+                    }
+                });
+            });
+            
+            const customSwitches = document.querySelectorAll('.custom-switch');
+            customSwitches.forEach(switchEl => {
+                switchEl.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                    const input = this.previousElementSibling;
+                    if (input && input.type === 'checkbox') {
+                        input.checked = !input.checked;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
