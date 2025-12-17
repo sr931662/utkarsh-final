@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  // baseURL: 'http://localhost:5000/api',
-  baseURL: 'http://localhost:5000/api',
+  // baseURL: 'https://utkarsh-server-807521575693.us-east1.run.app/api',
+  baseURL: 'https://utkarsh-server-807521575693.us-east1.run.app/api',
   withCredentials: true
 });
 
