@@ -94,7 +94,7 @@ sendContactEmail: async (formData) => {
 
   getPublicContactInfo: async () => {
     try {
-      const { data } = await api.get('/auth/auth/public/contact');
+      const { data } = await api.get('/auth/public/contact');
       return {
         success: true,
         data: data.data?.user || data.user || data
