@@ -1315,7 +1315,7 @@ const renderCarouselSettings = () => (
                         item.imagePreview || 
                         (item.imageUrl instanceof File ? URL.createObjectURL(item.imageUrl) : 
                         item.imageUrl.startsWith('http') ? item.imageUrl : 
-                        `http://localhost:5000${item.imageUrl}`)
+                        `https://utkarsh-server-807521575693.us-east1.run.app${item.imageUrl}`)
                       } 
                       alt="Preview" 
                     />
