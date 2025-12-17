@@ -22,7 +22,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { login: authLogin } = useAuth();
 
-  const API_BASE_URL = 'http://localhost:5000/api/auth';
+  const API_BASE_URL = 'https://utkarsh-server-807521575693.us-east1.run.app/api/auth';
 
   const clearMessages = () => {
     setErrors('');
