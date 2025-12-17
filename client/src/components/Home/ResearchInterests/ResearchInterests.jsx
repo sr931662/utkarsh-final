@@ -41,7 +41,7 @@ const ResearchInterest = () => {
             >
               <DiGoogleAnalytics 
                 className={styles.riIcon}
-                style={{ color: darkMode ? '#60a5fa' : '#2fdce8' }}
+                style={{ color: darkMode ? '#60a5fa' : '#60a5fa' }}
               />
             </div>
             <h3 
@@ -74,7 +74,7 @@ const ResearchInterest = () => {
             >
               <Si365Datascience 
                 className={styles.riIcon}
-                style={{ color: darkMode ? '#60a5fa' : '#2fdce8' }}
+                style={{ color: darkMode ? '#60a5fa' : '#60a5fa' }}
               />
             </div>
             <h3 
@@ -107,7 +107,7 @@ const ResearchInterest = () => {
             >
               <GiJourney 
                 className={styles.riIcon}
-                style={{ color: darkMode ? '#60a5fa' : '#2fdce8' }}
+                style={{ color: darkMode ? '#60a5fa' : '#60a5fa' }}
               />
             </div>
             <h3 
