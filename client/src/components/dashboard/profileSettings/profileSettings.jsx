@@ -1042,7 +1042,7 @@ const handleSubmit = async (e) => {
           <div className={styles.userAvatarLarge}>
             {user?.profileImage ? (
               <img 
-                src={`http://localhost:5000/uploads/Utkarsh-profile.jpg`} 
+                src={`https://utkarsh-server-807521575693.us-east1.run.app/uploads/Utkarsh-profile.jpg`} 
                 alt="Profile" 
                 className={styles.avatarImage}
               />
