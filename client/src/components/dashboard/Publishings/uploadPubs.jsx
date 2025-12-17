@@ -76,7 +76,7 @@ const UploadPublications = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await fetch('http://localhost:5000/api/publications/create', {
+      const response = await fetch('https://utkarsh-server-807521575693.us-east1.run.app/api/publications/create', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
