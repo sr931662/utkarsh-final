@@ -51,7 +51,7 @@ const CV = () => {
             href={CV_file} 
             className={styles.downloadButton} 
             download
-            style={{ backgroundColor: darkMode ? '#60a5fa' : '#2fdce8' }}
+            style={{ backgroundColor: darkMode ? '#60a5fa' : '#60a5fa' }}
           >
             <i className="ri-download-line mr-2"></i>
             <span>Download Full CV (PDF)</span>
